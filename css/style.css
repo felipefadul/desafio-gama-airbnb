@@ -108,3 +108,38 @@
     transform: scale(1);
   }
 }
+
+.card-icons {
+  font-size: 40px;
+  margin: 5px;
+}
+
+footer {
+  width: 100%;
+  background-color: #fff5f7;
+  color: #b3b3b3;
+  text-align: center;
+  padding: 20px;
+  text-decoration: none;
+}
+
+footer a{
+  font-weight: bold;
+  text-decoration: none !important;
+}
+
+footer a:hover{
+  color: #999999 !important;
+}
+
+footer a:visited {
+  color: #4d4d4d;
+}
+
+footer a:link {
+  color: #4d4d4d;
+}
+
+footer h4 {
+  font-size: 20px;
+}
