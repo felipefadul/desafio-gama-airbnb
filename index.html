@@ -25,8 +25,15 @@
     </nav>
 
     <div class="container-fluid">
-      <div id="cards-container"></div>
-      
+
+      <section id="section-preferences" class="row">
+        <div class="col-md-6 place-preference">
+          <div class="input-title">LOCALIZAÇÃO</div>
+          <input id="input-place" onkeyup="handleSearch()" placeholder="Para onde você vai?">
+        </div>
+      </section>
+
+      <div class="my-4" id="cards-container"></div>
     </div>  
 
     <footer class="text-muted">

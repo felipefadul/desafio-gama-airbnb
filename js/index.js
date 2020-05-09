@@ -1,5 +1,5 @@
 const apiUrl = "https://api.sheety.co/30b6e400-9023-4a15-8e6c-16aa4e3b1e72"
-const cardsContainer = document.querySelector("#cards-container");
+const cardsContainer = document.getElementById("cards-container");
 let data = [];
 
 async function fetchCards() {
@@ -39,3 +39,16 @@ async function main() {
 }
 
 main();
+
+function handleSearch() {
+  let inputValue = document.getElementById("input-place").value.toLowerCase();
+
+  const filteredResults = data.filter((places) => {
+    const placesToSearchByName = places.name.toLowerCase();
+
+    if (placesToSearchByName.search(inputValue) > -1)
+      return places;
+  });
+
+  renderCards(filteredResults);
+}
