@@ -98,3 +98,9 @@ function orderByNameZA() {
   
   renderCards(data);
 }
+
+function orderByPropertyType() {
+  data.sort((a, b) => (a.property_type > b.property_type ? 1 : b.property_type > a.property_type ? -1 : 0));
+  
+  renderCards(data);
+}
