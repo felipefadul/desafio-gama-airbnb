@@ -88,9 +88,13 @@ function updateCardsTotal(number) {
 }
 
 function orderByNameAZ() {
-  data.sort((a, b) => {
-    return a.name > b.name ? 1 : b.name > a.name ? -1 : 0;
-  });
+  data.sort((a, b) => (a.name > b.name ? 1 : b.name > a.name ? -1 : 0));
 
   renderCards();
+}
+
+function orderByNameZA() {
+  data.sort((a, b) => (a.name < b.name ? 1 : b.name < a.name ? -1 : 0));
+  
+  renderCards(data);
 }

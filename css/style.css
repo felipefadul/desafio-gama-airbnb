@@ -161,7 +161,7 @@ label {
 }
 
 .filter-button {
-  margin: 0 16px;
+  margin: 0 10px;
   width: max-content;
   border: 1px solid rgba(0, 0, 0, 0.2);
   border-radius: 30px;
@@ -251,5 +251,9 @@ footer h4 {
     display: flex;
     flex-direction: column;
     margin: 2rem 5%;
+  }
+
+  .filter-button:nth-child(n + 2) {
+    margin-top: 8px;
   }
 }
