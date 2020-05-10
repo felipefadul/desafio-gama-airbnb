@@ -105,7 +105,7 @@ function orderByPropertyType() {
   renderCards();
 }
 
-function orderByDecrescentPrice() {
+function orderByLowestPrice() {
   data.sort((a, b) => (a.price > b.price ? 1 : b.price > a.price ? -1 : 0));
 
   renderCards();
