@@ -110,3 +110,9 @@ function orderByLowestPrice() {
 
   renderCards();
 }
+
+function orderByHighestPrice() {
+  data.sort((a, b) => (a.price < b.price ? 1 : b.price < a.price ? -1 : 0));
+
+  renderCards();
+}
