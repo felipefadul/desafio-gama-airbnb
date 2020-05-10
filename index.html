@@ -10,6 +10,7 @@
       integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
       crossorigin="anonymous" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@500&display=swap" rel="stylesheet"> 
     <link rel="stylesheet" href="./css/style.css" />
   </head>
   <body>
@@ -37,6 +38,15 @@
           <label for="datepicker" class="input-title">CHECK-IN/CHECK-OUT</label>
           <input type="date" id="datepicker" class="input" placeholder="Insira as datas">
         </div>
+      </section>
+
+      <section id="section-filters">
+        <h1>Filtros:</h1>
+
+        <button class="filter-button" onclick="orderByNameAZ()">
+          A-Z
+        </button>
+
       </section>
 
       <div class="my-4" id="cards-container"></div>

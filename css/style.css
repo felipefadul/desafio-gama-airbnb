@@ -149,6 +149,32 @@ label {
   cursor: pointer;
 }
 
+#section-filters {
+  display: flex;
+  flex-direction: row;
+  margin: 2rem 12%;
+}
+
+#section-filters h1 {
+  font-family: 'Alegreya Sans', sans-serif;
+  color: #ff5a60;
+}
+
+.filter-button {
+  margin: 0 16px;
+  width: max-content;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 30px;
+  padding: 8px 16px;
+  transition: all .2s ease-in-out;
+  background-color: #faf9fe;
+}
+
+.filter-button:hover {
+  background-color: #ff5a60;
+  color: #ffffff;
+}
+
 .card-icons {
   font-size: 40px;
   margin: 5px;
@@ -219,5 +245,11 @@ footer h4 {
 
   .input-preference:nth-child(n + 2) {
     margin-top: 1rem;
+  }
+
+  #section-filters {
+    display: flex;
+    flex-direction: column;
+    margin: 2rem 5%;
   }
 }
