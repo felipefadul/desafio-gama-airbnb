@@ -8,9 +8,10 @@ async function fetchCards() {
   return await response.json();
 }
 
-function renderCards(cards) {
+function renderCards() {
+  const filteredResults = handleSearch();
   cardsContainer.innerHTML = "";
-  cards.map(renderCard);
+  filteredResults.map(renderCard);
 }
 
 function renderCard(card) {
@@ -51,7 +52,7 @@ async function main() {
     },
   });
   if (data[0])
-    renderCards(data);
+    renderCards();
 }
 
 main();
@@ -59,14 +60,12 @@ main();
 function handleSearch() {
   let inputValue = document.getElementById("input-place").value.toLowerCase();
 
-  const filteredResults = data.filter((places) => {
+   return data.filter((places) => {
     const placesToSearchByName = places.name.toLowerCase();
 
     if (placesToSearchByName.search(inputValue) > -1)
       return places;
   });
-
-  renderCards(filteredResults);
 }
 
 function daysBetween(date1, date2) {
@@ -85,5 +84,5 @@ function updateCardsTotal(number) {
   number = number ? number : 1;
   numberDays = number;
   
-  handleSearch();
+  renderCards();
 }
