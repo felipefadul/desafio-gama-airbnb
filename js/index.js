@@ -96,11 +96,17 @@ function orderByNameAZ() {
 function orderByNameZA() {
   data.sort((a, b) => (a.name < b.name ? 1 : b.name < a.name ? -1 : 0));
   
-  renderCards(data);
+  renderCards();
 }
 
 function orderByPropertyType() {
   data.sort((a, b) => (a.property_type > b.property_type ? 1 : b.property_type > a.property_type ? -1 : 0));
   
-  renderCards(data);
+  renderCards();
+}
+
+function orderByDecrescentPrice() {
+  data.sort((a, b) => (a.price > b.price ? 1 : b.price > a.price ? -1 : 0));
+
+  renderCards();
 }
