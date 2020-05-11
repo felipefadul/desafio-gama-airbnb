@@ -4,8 +4,12 @@ let data = [];
 let numberDays = 1;
 
 async function fetchCards() {
-  let response = await fetch(apiUrl);
-  return await response.json();
+  try {
+    let response = await fetch(apiUrl);
+    return await response.json();
+  } catch (err) {
+      console.error("Algo deu errado. Erro:", err);
+  }
 }
 
 function renderCards() {
@@ -41,18 +45,22 @@ function renderCard(card) {
 }
 
 async function main() {
-  data = await fetchCards();
-  flatpickr("#datepicker", {
-    mode: "range",
-    minDate: "today",
-    locale: "pt",
-    dateFormat: "d-m-Y",
-    onClose: function (selected) {
-      updateCardsTotal(daysBetween(selected[0], selected[1]));
-    },
-  });
-  if (data[0])
-    renderCards();
+  try {
+    data = await fetchCards();
+    flatpickr("#datepicker", {
+      mode: "range",
+      minDate: "today",
+      locale: "pt",
+      dateFormat: "d-m-Y",
+      onClose: function (selected) {
+        updateCardsTotal(daysBetween(selected[0], selected[1]));
+      },
+    });
+    if (data[0])
+      renderCards();
+  } catch (err) {
+    console.log("Erro ao recuperar os dados da API. Erro:", err);
+  }
 }
 
 main();
