@@ -96,31 +96,39 @@ function updateCardsTotal(number) {
 }
 
 function orderByNameAZ() {
-  data.sort((a, b) => (a.name > b.name ? 1 : b.name > a.name ? -1 : 0));
+  orderBy('name', 'ascending');
 
   renderCards();
 }
 
 function orderByNameZA() {
-  data.sort((a, b) => (a.name < b.name ? 1 : b.name < a.name ? -1 : 0));
+  orderBy('name', 'descending');
   
   renderCards();
 }
 
 function orderByPropertyType() {
-  data.sort((a, b) => (a.property_type > b.property_type ? 1 : b.property_type > a.property_type ? -1 : 0));
-  
+  orderBy('property_type', 'ascending');
+
   renderCards();
 }
 
 function orderByLowestPrice() {
-  data.sort((a, b) => (a.price > b.price ? 1 : b.price > a.price ? -1 : 0));
+  orderBy('price', 'ascending');
 
   renderCards();
 }
 
 function orderByHighestPrice() {
-  data.sort((a, b) => (a.price < b.price ? 1 : b.price < a.price ? -1 : 0));
+  orderBy('price', 'descending');
 
   renderCards();
+}
+
+function orderBy (parameter, order) {
+  if (order === "ascending") {
+    data.sort((a, b) => (a[parameter] > b[parameter] ? 1 : b[parameter] > a[parameter] ? -1 : 0));
+  } else {
+    data.sort((a, b) => (a[parameter] < b[parameter] ? 1 : b[parameter] < a[parameter] ? -1 : 0));
+  }
 }
