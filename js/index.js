@@ -1,4 +1,4 @@
-const apiUrl = "https://api.sheety.co/30b6e400-9023-4a15-8e6c-16aa4e3b1e72";
+const apiUrl = "https://dry-cliffs-94979.herokuapp.com/";
 const cardsContainer = document.getElementById("cards-container");
 let data = [];
 let numberDays = 1;
