@@ -181,6 +181,12 @@ label {
   margin: 5px;
 }
 
+.error-message {
+  text-align: center;
+  font-size: 1.5rem;
+  color: #9794a0
+}
+
 footer {
   width: 100%;
   background-color: #fff5f7;

@@ -6,6 +6,8 @@ let numberDays = 1;
 async function fetchCards() {
   try {
     let response = await fetch(apiUrl);
+    if (response.status !== 200)
+      renderErrorMessage();
     return await response.json();
   } catch (err) {
       console.error("Algo deu errado. Erro:", err);
@@ -44,6 +46,19 @@ function renderCard(card) {
   cardsContainer.appendChild(div);
 }
 
+function renderErrorMessage() {
+  const div = document.createElement("div");
+  div.style.width = "30rem";
+  div.style.margin = "1.5rem .5rem";
+  div.className = "error-message";
+  div.innerHTML = `
+  <p>
+    Hmm, parece que não há mais propriedades disponíveis :(
+  </p>
+  `;
+  cardsContainer.appendChild(div);
+}
+
 async function main() {
   try {
     data = await fetchCards();
@@ -56,7 +71,7 @@ async function main() {
         updateCardsTotal(daysBetween(selected[0], selected[1]));
       },
     });
-    if (data[0])
+    if (data.length > 0)
       renderCards();
   } catch (err) {
     console.log("Erro ao recuperar os dados da API. Erro:", err);
