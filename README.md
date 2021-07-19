@@ -1,5 +1,5 @@
 # Desafio
-O desafio consiste em criar uma página similar a do Airbnb através do consumo da API de quartos, usando Javascript Vanilla e Flexbox para organizá-los em cards na tela, a partir [deste banco de dados aqui](https://api.sheety.co/30b6e400-9023-4a15-8e6c-16aa4e3b1e72).
+O desafio consiste em criar uma página similar a do Airbnb através do consumo da API de quartos, usando Javascript Vanilla e Flexbox para organizá-los em cards na tela, a partir [deste banco de dados aqui](https://dry-cliffs-94979.herokuapp.com/).
 A página criada para o desafio pode ser acessada aqui: https://desafio-gama-airbnb.netlify.app/
 
 ## Motivação
